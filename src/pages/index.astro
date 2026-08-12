@@ -4,89 +4,107 @@ import Navbar from '../components/Navbar';
 import ProjectShowcase from '../components/ProjectShowcase';
 
 const experience = [
-  ['E261 Consulting','Web Developer','Jul 2025 — 2026','Development with Symfony and ReactJS; creation and integration of web mockups.'],
-  ['Cap’s Digit','Developer — Alternance / CDD','Sep 2024 — Mar 2025','Contributed to the architecture of a Symfony application and its maintenance and evolution.'],
-  ['Next-Rocket','Freelance Web Developer','Feb 2024 — Jun 2024','Part-time freelance work with JavaScript, WordPress and Bubble.'],
-  ['LCom','Web Developer Intern','Sep — Nov 2023','Part-time backend development with Laravel.'],
-  ['MyAgency','Discovery Intern','Nov — Dec 2022','Introduction to object-oriented web development with PHP and OOP.'],
-  ['OMAPI','Intern','Oct — Nov 2021 / Dec 2022','Client relations and digitisation of company archive files.'],
+    ['E261 Consulting','Web Developer','Jul 2025 — 2026','Development with Symfony and ReactJS; creation and integration of web mockups.'],
+    ['Cap’s Digit','Developer — Alternance / CDD','Sep 2024 — Mar 2025','Contributed to the architecture of a Symfony application and its maintenance and evolution.'],
+    ['Next-Rocket','Freelance Web Developer','Feb 2024 — Jun 2024','Part-time freelance work with JavaScript, WordPress and Bubble.'],
+    ['LCom','Web Developer Intern','Sep — Nov 2023','Part-time backend development with Laravel.'],
+    ['MyAgency','Discovery Intern','Nov — Dec 2022','Introduction to object-oriented web development with PHP and OOP.'],
+    ['OMAPI','Intern','Oct — Nov 2021 / Dec 2022','Client relations and digitisation of company archive files.'],
 ];
 
 const skills = ['Symfony 6/7','PHP / OOP / MVC','ReactJS','JavaScript','MySQL','Doctrine ORM','Laravel','Tailwind CSS','Bootstrap','HTML5 / CSS3','Figma','UI/UX Design','WordPress','Bubble'];
 ---
 
 <Layout>
-  <div id="top" class="min-h-screen overflow-hidden">
-    <Navbar client:load />
+    <div id="top" class="min-h-screen overflow-hidden">
+        <Navbar client:load />
+        <main>
+            <section class="grid-bg relative flex items-end px-5 pb-24 pt-32 sm:px-8 lg:px-12 lg:pb-36">
+                <div class="md:mt-24 lg:mt-32 mx-auto w-full max-w-360">
+                    <div class="mb-8 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[.16em] text-black/60 reveal">
+                        <span class="inline-block size-2 rounded-full bg-green-500 ring-4 ring-black/5"></span>
+                        Available for selected opportunities
+                    </div>
 
-    <main>
-      <section class="grid-bg relative flex min-h-[80vh] items-end px-5 pb-12 pt-32 sm:px-8 lg:px-12 lg:pb-16">
-        <div class="mx-auto w-full max-w-360">
-          <div class="mb-8 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[.16em] text-black/50 reveal"><span class="inline-block size-2 rounded-full bg-acid ring-4 ring-black/5"></span> Available for selected opportunities</div>
-          <h1 class="max-w-312.5 text-[16vw] font-semibold leading-[.77] tracking-[-.085em] sm:text-[13vw] lg:text-[10.2vw] reveal reveal-d1">Sarobidinirina<br/><span class="text-black/25">Tsizehena.</span></h1>
-          <div class="mt-10 grid gap-8 lg:grid-cols-[1fr_380px] reveal reveal-d2">
-            <p class="max-w-2xl text-xl leading-snug tracking-[-.02em] sm:text-2xl">Web developer building thoughtful digital experiences across <span class="underline decoration-black/20 underline-offset-4">Symfony, React and PHP</span>.</p>
-            <div class="flex flex-col justify-end lg:items-end"><p class="max-w-xs text-sm leading-relaxed text-black/55 lg:text-right">Student in software engineering & AI. I like turning ideas, interfaces and messy requirements into clear, working products.</p><div class="mt-6 flex gap-2"><a href="#work" class="rounded-full bg-black px-5 py-3 font-mono text-[10px] uppercase tracking-[.12em] text-white">Explore work ↓</a><a href="#contact" class="rounded-full border border-black/15 px-5 py-3 font-mono text-[10px] uppercase tracking-[.12em]">Contact ↗</a></div></div>
-          </div>
-        </div>
-      </section>
+                    <h1 class="max-w-312.5 text-[12vw] font-semibold leading-[.80] md:tracking-[-.085em] tracking-tighter sm:text-[13vw] lg:text-[10.2vw] reveal reveal-d1">
+                        Sarobidinirina<br/>
+                        <span class="text-black/30">Tsizehena.</span>
+                    </h1>
 
-      <div class="flex justify-center border-y border-black/10 bg-black py-3">
-        <div class="w-full max-w-3xl overflow-hidden text-white">
-          <div class="marquee flex w-max gap-8 whitespace-nowrap font-mono text-[10px] uppercase tracking-[.2em]">
-            <span>Web development</span>
-            <span>✳</span>
-            <span>Symfony</span>
-            <span>✳</span>
-            <span>ReactJS</span>
-            <span>✳</span>
-            <span>UI / UX</span>
-            <span>✳</span>
-            <span>PHP</span>
-            <span>✳</span>
-            <span>Web development</span>
-            <span>✳</span>
-            <span>Symfony</span>
-            <span>✳</span>
-            <span>ReactJS</span>
-            <span>✳</span>
-            <span>UI / UX</span>
-            <span>✳</span>
-            <span>PHP</span>
-          </div>
-        </div>
-      </div>
+                    <div class="mt-10 md:mt-20 grid gap-8 lg:grid-cols-[1fr_380px] reveal reveal-d2">
+                        <p class="max-w-2xl text-xl leading-snug tracking-[-.02em] sm:text-2xl">
+                            Web developer building thoughtful digital experiences across
+                            <span class="underline decoration-black/20 underline-offset-4">Symfony, React and PHP</span>.
+                        </p>
+                        <div class="flex flex-col justify-end lg:items-end">
+                            <p class="max-w-xs text-sm leading-relaxed text-black/75 lg:text-right">
+                                Student in software engineering & AI. I like turning ideas, interfaces and messy requirements into clear, working products.
+                            </p>
+                            <div class="mt-6 flex gap-2">
+                                <a href="#work" class="rounded-full bg-black px-5 py-3 font-mono text-[10px] uppercase tracking-[.12em] text-white">Explore work ↓</a>
+                                <a href="#contact" class="rounded-full border border-black/15 px-5 py-3 font-mono text-[10px] uppercase tracking-[.12em]">Contact ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-      <section id="work" class="px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
-        <div class="mx-auto max-w-360">
-          <div class="mb-14 grid gap-8 lg:grid-cols-[.55fr_1fr] lg:items-end"><div><span class="font-mono text-[10px] uppercase tracking-[.16em] text-black/45">01 / Selected work</span></div><h2 class="max-w-4xl text-5xl font-semibold leading-[.95] tracking-[-.055em] sm:text-7xl lg:text-[7.2vw]">Built for the web,<br/><span class="text-black/25">shaped by context.</span></h2></div>
-          <ProjectShowcase client:load />
-          <p class="mt-8 max-w-xl text-sm leading-relaxed text-black/45">The work above is grounded in the professional experience documented in my CV. More detailed case studies can be added as project assets and links are gathered.</p>
-        </div>
-      </section>
+            <div class="flex justify-center border-y border-black/10 bg-black py-3">
+                <div class="w-full max-w-3xl overflow-hidden text-white">
+                    <div class="marquee flex w-max gap-8 whitespace-nowrap font-mono text-[10px] uppercase tracking-[.2em]">
+                        <span>Web development</span>
+                        <span>✳</span>
+                        <span>Symfony</span>
+                        <span>✳</span>
+                        <span>ReactJS</span>
+                        <span>✳</span>
+                        <span>UI / UX</span>
+                        <span>✳</span>
+                        <span>PHP</span>
+                        <span>✳</span>
+                        <span>Web development</span>
+                        <span>✳</span>
+                        <span>Symfony</span>
+                        <span>✳</span>
+                        <span>ReactJS</span>
+                        <span>✳</span>
+                        <span>UI / UX</span>
+                        <span>✳</span>
+                        <span>PHP</span>
+                    </div>
+                </div>
+            </div>
 
-      <section id="about" class="border-t border-black/10 px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
-        <div class="mx-auto grid max-w-360 gap-14 lg:grid-cols-[.55fr_1fr]">
-          <div><span class="font-mono text-[10px] uppercase tracking-[.16em] text-black/45">02 / About</span><p class="mt-5 max-w-xs text-sm leading-relaxed text-black/50">Antananarivo, Madagascar<br/>French / English</p></div>
-          <div><p class="max-w-5xl text-4xl font-medium leading-[1.05] tracking-[-.04em] sm:text-6xl">An agile and creative developer with a fast learning curve and a strong interest in information technology.</p><p class="mt-10 max-w-2xl text-lg leading-relaxed text-black/60">My background combines software engineering, artificial intelligence, backend development and interface integration. I enjoy moving between structure and surface: understanding how an application works, then making the experience clear and responsive.</p></div>
-        </div>
-      </section>
+            <section id="work" class="px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
+                <div class="mx-auto max-w-360">
+                    <div class="mb-14 grid gap-8 lg:grid-cols-[.55fr_1fr] lg:items-end"><div><span class="font-mono text-[10px] uppercase tracking-[.16em] text-black/45">01 / Selected work</span></div><h2 class="max-w-4xl text-5xl font-semibold leading-[.95] tracking-[-.055em] sm:text-7xl lg:text-[7.2vw]">Built for the web,<br/><span class="text-black/25">shaped by context.</span></h2></div>
+                    <ProjectShowcase client:load />
+                    <p class="mt-8 max-w-xl text-sm leading-relaxed text-black/45">The work above is grounded in the professional experience documented in my CV. More detailed case studies can be added as project assets and links are gathered.</p>
+                </div>
+            </section>
 
-      <section id="experience" class="border-t border-black/10 px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
-        <div class="mx-auto max-w-360"><div class="mb-14 grid gap-8 lg:grid-cols-[.55fr_1fr]"><span class="font-mono text-[10px] uppercase tracking-[.16em] text-black/45">03 / Experience</span><h2 class="text-5xl font-semibold leading-none tracking-[-.055em] sm:text-7xl">A growing<br/><span class="text-black/25">practice.</span></h2></div>
-          <div class="border-t border-black/15">{experience.map(([company,role,date,desc], i) => <article class="grid gap-4 border-b border-black/10 py-7 sm:grid-cols-[.2fr_1fr_.3fr] lg:py-9"><span class="font-mono text-[10px] text-black/35">0{i+1}</span><div><h3 class="text-xl font-semibold tracking-tight">{company}</h3><p class="mt-1 text-sm text-black/50">{role}</p><p class="mt-5 max-w-xl text-sm leading-relaxed text-black/60">{desc}</p></div><span class="font-mono text-[10px] uppercase tracking-widest text-black/40 sm:text-right">{date}</span></article>)}</div>
-        </div>
-      </section>
+            <section id="about" class="border-t border-black/10 px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
+                <div class="mx-auto grid max-w-360 gap-14 lg:grid-cols-[.55fr_1fr]">
+                    <div><span class="font-mono text-[10px] uppercase tracking-[.16em] text-black/45">02 / About</span><p class="mt-5 max-w-xs text-sm leading-relaxed text-black/50">Antananarivo, Madagascar<br/>French / English</p></div>
+                    <div><p class="max-w-5xl text-4xl font-medium leading-[1.05] tracking-[-.04em] sm:text-6xl">An agile and creative developer with a fast learning curve and a strong interest in information technology.</p><p class="mt-10 max-w-2xl text-lg leading-relaxed text-black/60">My background combines software engineering, artificial intelligence, backend development and interface integration. I enjoy moving between structure and surface: understanding how an application works, then making the experience clear and responsive.</p></div>
+                </div>
+            </section>
 
-      <section class="border-t border-black/10 bg-black px-5 py-24 text-white sm:px-8 lg:px-12 lg:py-32">
-        <div class="mx-auto max-w-360"><div class="grid gap-12 lg:grid-cols-[.55fr_1fr]"><span class="font-mono text-[10px] uppercase tracking-[.16em] text-white/40">04 / Capabilities</span><div><h2 class="max-w-4xl text-4xl font-medium leading-[.98] tracking-[-.045em] sm:text-6xl">A practical stack, with an eye for the interface.</h2><div class="mt-12 flex flex-wrap gap-2">{skills.map(skill => <span class="rounded-full border border-white/15 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-white/70">{skill}</span>)}</div></div></div></div>
-      </section>
+        <section id="experience" class="border-t border-black/10 px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
+            <div class="mx-auto max-w-360"><div class="mb-14 grid gap-8 lg:grid-cols-[.55fr_1fr]"><span class="font-mono text-[10px] uppercase tracking-[.16em] text-black/45">03 / Experience</span><h2 class="text-5xl font-semibold leading-none tracking-[-.055em] sm:text-7xl">A growing<br/><span class="text-black/25">practice.</span></h2></div>
+            <div class="border-t border-black/15">{experience.map(([company,role,date,desc], i) => <article class="grid gap-4 border-b border-black/10 py-7 sm:grid-cols-[.2fr_1fr_.3fr] lg:py-9"><span class="font-mono text-[10px] text-black/35">0{i+1}</span><div><h3 class="text-xl font-semibold tracking-tight">{company}</h3><p class="mt-1 text-sm text-black/50">{role}</p><p class="mt-5 max-w-xl text-sm leading-relaxed text-black/60">{desc}</p></div><span class="font-mono text-[10px] uppercase tracking-widest text-black/40 sm:text-right">{date}</span></article>)}</div>
+            </div>
+        </section>
 
-      <section id="contact" class="grid-bg border-t border-black/10 px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
-        <div class="mx-auto max-w-360"><span class="font-mono text-[10px] uppercase tracking-[.16em] text-black/45">05 / Contact</span><div class="mt-10 flex flex-col justify-between gap-12 lg:flex-row lg:items-end"><h2 class="max-w-5xl text-[15vw] font-semibold leading-[.78] tracking-[-.08em] sm:text-[11vw] lg:text-[9vw]">Let's make<br/><span class="text-black/25">something.</span></h2><div class="max-w-sm lg:pb-2"><p class="text-lg leading-relaxed text-black/60">Have an idea, a product to build, or a problem worth solving?</p><a href="mailto:tsizehena223@gmail.com" class="mt-6 inline-flex rounded-full bg-black px-6 py-4 font-mono text-[10px] uppercase tracking-[.14em] text-white">tsizehena223@gmail.com ↗</a></div></div></div>
-      </section>
-    </main>
+        <section class="border-t border-black/10 bg-black px-5 py-24 text-white sm:px-8 lg:px-12 lg:py-32">
+            <div class="mx-auto max-w-360"><div class="grid gap-12 lg:grid-cols-[.55fr_1fr]"><span class="font-mono text-[10px] uppercase tracking-[.16em] text-white/40">04 / Capabilities</span><div><h2 class="max-w-4xl text-4xl font-medium leading-[.98] tracking-[-.045em] sm:text-6xl">A practical stack, with an eye for the interface.</h2><div class="mt-12 flex flex-wrap gap-2">{skills.map(skill => <span class="rounded-full border border-white/15 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-white/70">{skill}</span>)}</div></div></div></div>
+        </section>
 
-    <footer class="border-t border-black/10 px-5 py-6 sm:px-8 lg:px-12"><div class="mx-auto flex max-w-360 flex-col gap-4 font-mono text-[10px] uppercase tracking-[.12em] text-black/45 sm:flex-row sm:items-center sm:justify-between"><span>© {new Date().getFullYear()} Sarobidinirina Tsizehena</span><span>Built with Astro + React + Tailwind</span><a href="#top" class="text-black transition hover:text-black/50">Back to top ↑</a></div></footer>
-  </div>
+        <section id="contact" class="grid-bg border-t border-black/10 px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
+            <div class="mx-auto max-w-360"><span class="font-mono text-[10px] uppercase tracking-[.16em] text-black/45">05 / Contact</span><div class="mt-10 flex flex-col justify-between gap-12 lg:flex-row lg:items-end"><h2 class="max-w-5xl text-[15vw] font-semibold leading-[.78] tracking-[-.08em] sm:text-[11vw] lg:text-[9vw]">Let's make<br/><span class="text-black/25">something.</span></h2><div class="max-w-sm lg:pb-2"><p class="text-lg leading-relaxed text-black/60">Have an idea, a product to build, or a problem worth solving?</p><a href="mailto:tsizehena223@gmail.com" class="mt-6 inline-flex rounded-full bg-black px-6 py-4 font-mono text-[10px] uppercase tracking-[.14em] text-white">tsizehena223@gmail.com ↗</a></div></div></div>
+        </section>
+        </main>
+
+        <footer class="border-t border-black/10 px-5 py-6 sm:px-8 lg:px-12"><div class="mx-auto flex max-w-360 flex-col gap-4 font-mono text-[10px] uppercase tracking-[.12em] text-black/45 sm:flex-row sm:items-center sm:justify-between"><span>© {new Date().getFullYear()} Sarobidinirina Tsizehena</span><span>Built with Astro + React + Tailwind</span><a href="#top" class="text-black transition hover:text-black/50">Back to top ↑</a></div></footer>
+    </div>
 </Layout>
