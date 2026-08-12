@@ -3,12 +3,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      target: dev # Explicitly targets the development stage
     container_name: tsizehena-portfolio
     ports:
       - "4321:4321"
     volumes:
       - .:/app
       - /app/node_modules
+      - /app/.astro
     environment:
       - NODE_ENV=development
-    command: npm run dev -- --host 0.0.0.0

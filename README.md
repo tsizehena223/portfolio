@@ -1,3 +1,1 @@
-# Tsizehena Portfolio — Astro + React + Tailwind
-
-My personal portfolio
+# My brand new porftolio
