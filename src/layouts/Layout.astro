@@ -1,0 +1,21 @@
+---
+import '../styles/global.css';
+const {
+  title = 'Tsizehena — Web Developer',
+  description = 'Portfolio of Sarobidinirina Tsizehena, a web developer working across Symfony, React, PHP and modern web interfaces.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f2f0ea" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
