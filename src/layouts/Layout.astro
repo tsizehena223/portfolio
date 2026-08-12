@@ -1,21 +1,79 @@
 ---
 import '../styles/global.css';
+
+interface Props {
+    title?: string;
+    description?: string;
+    image?: string;
+}
+
 const {
-  title = 'Tsizehena — Web Developer',
-  description = 'Portfolio of Sarobidinirina Tsizehena, a web developer working across Symfony, React, PHP and modern web interfaces.'
+    title = 'Tsizehena Sarobidinirina — Full-Stack Web Developer & UI Integrator',
+    description = 'Portfolio of Sarobidinirina Tsizehena, a web developer specializing in Symfony, ReactJS, PHP, and responsive web interface design.',
+    image = '/og-image.jpg'
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://tsizehena.onrender.com');
+const socialImageURL = new URL(image, Astro.site || 'https://tsizehena.onrender.com');
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sarobidinirina Tsizehena Bienvenue",
+  "alternateName": "Tsizehena",
+  "url": canonicalURL.href,
+  "jobTitle": "Full-Stack Web Developer",
+  "knowsAbout": ["Symfony", "ReactJS", "PHP", "Tailwind CSS", "UI/UX Integration", "JavaScript"],
+  "sameAs": [
+    "https://github.com/tsizehena223"
+  ]
+};
 ---
 
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description} />
-    <meta name="theme-color" content="#f2f0ea" />
-    <title>{title}</title>
-  </head>
-  <body>
-    <slot />
-  </body>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <!-- Essential Meta Tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="theme-color" content="#f2f0ea" />
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href={canonicalURL} />
+
+        <!-- Primary Page Title & Description -->
+        <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+        <meta name="author" content="Sarobidinirina Tsizehena" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Favicon Integration -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+        <!-- Open Graph / Facebook / LinkedIn -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={socialImageURL} />
+        <meta property="og:site_name" content="Tsizehena Portfolio" />
+
+        <!-- Twitter Card Meta Tags -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={canonicalURL} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={socialImageURL} />
+
+        <!-- Structured Data / JSON-LD for Search Engines -->
+        <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    </head>
+    <body class="bg-paper text-slate-900 antialiased selection:bg-black selection:text-white">
+        <slot />
+    </body>
 </html>
