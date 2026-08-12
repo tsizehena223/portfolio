@@ -26,12 +26,9 @@ export default function Navbar() {
               className={`mx-auto flex max-w-360 items-center justify-between rounded-full border border-black/10 px-4 py-2.5 backdrop-blur-xl transition ${scrolled ? 'bg-paper/85 shadow-sm' : 'bg-paper/55'}`}
             >
                 {/* Brand / Logo link */}
-                <a 
-                  href="#top" 
-                  aria-label="Back to top - Tsizehena Sarobidinirina Portfolio" 
-                  className="font-mono text-sm font-medium tracking-tight"
-                >
-                  TSIZEHENA<span className="ml-1 text-black/50">S</span>
+                <a href="#top" aria-label="Back to top - Tsizehena Sarobidinirina Portfolio" className="flex items-center gap-2 font-mono text-sm font-medium tracking-tight group">
+                    <img src="/apple-touch-icon.png" alt="" aria-hidden="true" className="size-7 rounded-full object-cover transition-transform group-hover:scale-105"/>
+                    <span>Tsizehena</span>
                 </a>
 
                 {/* Desktop navigation links */}
@@ -40,7 +37,7 @@ export default function Navbar() {
                       <a 
                         key={href} 
                         aria-label={`Navigate to ${label} section`}
-                        className="font-mono text-[12px] uppercase tracking-[.12em] text-black/70 transition hover:text-black" 
+                        className="font-mono text-[10px] md:text-[12px] uppercase tracking-[.12em] text-black/70 transition hover:text-black" 
                         href={href}
                       >
                         {label}
