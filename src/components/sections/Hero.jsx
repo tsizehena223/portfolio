@@ -42,7 +42,7 @@ export default function Hero({ lang = 'en' }) {
                             <a 
                                 href="#work" 
                                 aria-label="Scroll down to explore selected work" 
-                                className="flex items-center rounded-full bg-black px-5 py-3 font-mono text-[10px] uppercase tracking-[.12em] text-white transition hover:bg-black/80"
+                                className="flex items-center rounded-full bg-black px-5 py-3 font-mono text-[10px] uppercase tracking-[.12em] text-acid transition hover:bg-black/80"
                             >
                                 {cta.explore} <ArrowUpRight size={17} strokeWidth={1.5}/>
                             </a>

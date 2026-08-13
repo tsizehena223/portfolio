@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Menu, X, Globe, MessageCircle } from 'lucide-react';
-import { SITE_CONFIG } from '../../data/data.js';
 
 const linksData = {
     fr: [
@@ -28,8 +27,6 @@ export default function Header({ lang = 'en' }) {
 
     const links = linksData[lang] || linksData.fr;
     const targetLang = lang === 'fr' ? 'en' : 'fr';
-
-    const emailAddress = SITE_CONFIG[lang]?.email || SITE_CONFIG.email || 'tsizehena223@gmail.com';
 
     useEffect(() => {
         const fn = () => setScrolled(window.scrollY > 24);
@@ -65,7 +62,7 @@ export default function Header({ lang = 'en' }) {
                         <span className={lang === 'fr' ? 'font-bold text-black' : 'opacity-40'}>FR</span>
                     </a>
 
-                    <a href={`mailto:${emailAddress}`} aria-label={`Send an email to ${emailAddress}`} className="flex items-center rounded-full bg-black px-4 py-2 font-mono text-[10px] uppercase tracking-[.12em] text-white transition hover:bg-black/80">
+                    <a href="#contact" className="flex items-center rounded-full bg-black px-4 py-2 font-mono text-[10px] uppercase tracking-[.12em] text-white transition hover:text-acid">
                         {ctaText[lang]} <MessageCircle size={12} className="ml-1"/>
                     </a>
                 </div>
@@ -95,7 +92,7 @@ export default function Header({ lang = 'en' }) {
                         </a>
                     ))}
 
-                    <a href={`mailto:${emailAddress}`} className="mt-4 block rounded-2xl bg-black py-3 text-center font-mono text-xs uppercase tracking-[.12em] text-white">
+                    <a href="#contact" className="mt-4 block rounded-2xl bg-black py-3 text-center font-mono text-xs uppercase tracking-[.12em] text-white">
                         {ctaText[lang]}
                     </a>
                 </div>

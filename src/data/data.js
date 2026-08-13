@@ -4,12 +4,20 @@ export const SITE_CONFIG = {
         location: 'Antananarivo, Madagascar',
         languages: 'Français / Anglais',
         email: 'tsizehena223@gmail.com',
+        phone: '+261 38 12 058 97',
+        github: 'https://github.com/tsizehena223',
+        linkedin: 'https://www.linkedin.com/in/sarobidi-tsizehena/',
+        facebook: 'https://facebook.com/Tsizehena',
     },
     en: {
         name: 'Sarobidinirina Tsizehena',
         location: 'Antananarivo, Madagascar',
         languages: 'French / English',
         email: 'tsizehena223@gmail.com',
+        phone: '+261 38 12 058 97',
+        github: 'https://github.com/tsizehena223',
+        linkedin: 'https://www.linkedin.com/in/sarobidi-tsizehena/',
+        facebook: 'https://facebook.com/Tsizehena',
     },
 };
 
