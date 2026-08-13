@@ -1,5 +1,5 @@
 import { SITE_CONFIG } from "../../data/data.js";
-import { Contact, UserRound, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const uiLabels = {
     fr: {
