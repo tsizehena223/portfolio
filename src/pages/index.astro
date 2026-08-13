@@ -1,191 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar';
-import Projects from '../components/Projects';
 
-const experience = [
-    ['E261 Consulting','Web Developer','Jul 2025 — 2026','Development with Symfony and ReactJS; creation and integration of web mockups.'],
-    ['Cap’s Digit','Developer — Alternance / CDD','Sep 2024 — Mar 2025','Contributed to the architecture of a Symfony application and its maintenance and evolution.'],
-    ['Next-Rocket','Freelance Web Developer','Feb 2024 — Jun 2024','Part-time freelance work with JavaScript, WordPress and Bubble.'],
-    ['LCom','Web Developer Intern','Sep — Nov 2023','Part-time backend development with Laravel.'],
-    ['MyAgency','Discovery Intern','Nov — Dec 2022','Introduction to object-oriented web development with PHP and OOP.'],
-    ['OMAPI','Intern','Oct — Nov 2021 / Dec 2022','Client relations and digitisation of company archive files.'],
-];
+import Header from '../components/layouts/Header';
+import Footer from '../components/layouts/Footer';
+import Banner from '../components/others/Banner';
 
-const skills = ['Symfony 6/7','PHP / OOP / MVC','ReactJS','JavaScript','MySQL','Doctrine ORM','Laravel','Tailwind CSS','Bootstrap','HTML5 / CSS3','Figma','UI/UX Design','WordPress','Bubble'];
-
-const keywords = ['Web development', 'Symfony', 'ReactJS', 'UI / UX', 'PHP'];
+import Projects from '../components/sections/Projects';
+import Hero from '../components/sections/Hero';
+import About from '../components/sections/About';
+import Experiences from '../components/sections/Experiences';
+import Skills from '../components/sections/Skills';
+import Contact from '../components/sections/Contact';
+import {
+  KEYWORDS,
+} from '../data/data.js';
 ---
 
 <Layout>
     <div id="top" class="min-h-screen overflow-hidden">
-        <Navbar client:load />
+        <Header client:load />
         <main>
-            <!-- Hero Section -->
-            <section class="soft-grid relative flex items-center px-5 py-36 lg:py-40 sm:px-8 lg:px-12" aria-label="Hero section">
-                <div class="md:mt-24 lg:mt-32 mx-auto w-full max-w-360">
-                    <div class="mb-8 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[.16em] text-black/60 reveal">
-                        <span class="inline-block size-2 rounded-full bg-green-500 ring-4 ring-black/5" aria-hidden="true"></span>
-                        Available for selected opportunities
-                    </div>
-
-                    <h1 class="max-w-312.5 font-semibold leading-[.80] md:tracking-[-.085em] tracking-tighter text-5xl sm:text-7xl md:text-9xl lg:text-[12rem] reveal reveal-d1">
-                        Sarobidinirina<br/>
-                        <span class="text-black/30">Tsizehena.</span>
-                    </h1>
-
-                    <div class="mt-10 md:mt-20 grid gap-8 lg:grid-cols-[1fr_380px] reveal reveal-d2">
-                        <p class="max-w-2xl text-xl leading-snug tracking-[-.02em] sm:text-2xl">
-                            Web developer building thoughtful digital experiences across
-                            <span class="underline decoration-black/20 underline-offset-4">Symfony, React and PHP</span>.
-                        </p>
-                        <div class="flex flex-col justify-end lg:items-end">
-                            <p class="max-w-xs text-sm leading-relaxed text-black/75 lg:text-right">
-                                Student in software engineering & AI. I like turning ideas, interfaces and messy requirements into clear, working products.
-                            </p>
-                            <div class="mt-6 flex gap-2">
-                                <a 
-                                  href="#work" 
-                                  aria-label="Scroll down to explore selected work" 
-                                  class="rounded-full bg-black px-5 py-3 font-mono text-[10px] uppercase tracking-[.12em] text-white transition hover:bg-black/80"
-                                >
-                                  Explore work <span aria-hidden="true">↓</span>
-                                </a>
-                                <a 
-                                  href="#contact" 
-                                  aria-label="Jump to contact section" 
-                                  class="rounded-full border border-black/15 px-5 py-3 font-mono text-[10px] uppercase tracking-[.12em] transition hover:bg-black/5"
-                                >
-                                  Contact <span aria-hidden="true">↗</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Ticker / Marquee Banner -->
-            <div class="flex justify-center border-y border-black/10 bg-black py-3" aria-hidden="true">
-                <div class="w-full max-w-6xl overflow-hidden text-white">
-                    <div class="marquee flex w-max gap-8 whitespace-nowrap font-mono text-[10px] uppercase tracking-[.2em]">
-                        {keywords.concat(keywords).map((keyword) => (
-                            <span class="text-md md:text-lg">{keyword}</span>
-                            <span class="text-md md:text-lg text-white/50">*</span>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            <!-- Selected Work Section -->
-            <section id="work" class="px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
-                <div class="mx-auto max-w-360">
-                    <div class="mb-14 grid gap-8 lg:grid-cols-[.55fr_1fr] lg:items-end">
-                        <span class="font-mono text-[12px] uppercase tracking-[.16em] text-black/65">01 / Selected work</span>
-                        <h2 class="max-w-4xl text-4xl md:text-end font-semibold leading-[.95] tracking-[-.055em] sm:text-7xl">
-                            Built for the web,<br/>
-                            <span class="text-black/25">shaped by context.</span>
-                        </h2>
-                    </div>
-                    <Projects client:load />
-                </div>
-            </section>
-
-            <!-- About Section -->
-            <section id="about" class="dot-grid border-t border-black/10 px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
-                <div class="mx-auto grid max-w-360 gap-14 lg:grid-cols-[.55fr_1fr]">
-                    <div>
-                        <span class="font-mono text-[12px] uppercase tracking-[.16em] text-black/65">02 / About</span>
-                        <p class="mt-5 max-w-xs text-sm leading-relaxed text-black/50">Antananarivo, Madagascar<br/>French / English</p>
-                    </div>
-                    <div>
-                        <p class="max-w-5xl text-4xl font-medium leading-[1.05] tracking-[-.04em] sm:text-6xl">An agile and creative developer with a fast learning curve and a strong interest in information technology.</p>
-                        <p class="mt-10 max-w-2xl text-lg leading-relaxed text-black/60">My background combines software engineering, artificial intelligence, backend development and interface integration. I enjoy moving between structure and surface: understanding how an application works, then making the experience clear and responsive.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Experience Section -->
-            <section id="experience" class="border-t border-black/10 px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
-                <div class="mx-auto max-w-360">
-                    <div class="mb-14 grid gap-8 lg:grid-cols-[.55fr_1fr]">
-                        <span class="font-mono text-[12px] uppercase tracking-[.16em] text-black/65">03 / Experience</span>
-                        <h2 class="text-5xl font-semibold leading-none tracking-[-.055em] sm:text-7xl">
-                            A growing<br/><span class="text-black/25">practice.</span>
-                        </h2>
-                    </div>
-                    <div class="border-t border-black/15">
-                        {experience.map(([company, role, date, desc], i) => 
-                            <article class="grid gap-4 border-b border-black/10 py-7 sm:grid-cols-[.2fr_1fr_.3fr] lg:py-9">
-                                <span class="font-mono text-[12px] text-black/35">0{i+1}</span>
-                                <div>
-                                    <h3 class="text-xl font-semibold tracking-tight">{company}</h3>
-                                    <p class="mt-1 text-sm text-black/50">{role}</p>
-                                    <p class="mt-5 max-w-xl text-sm leading-relaxed text-black/60">{desc}</p>
-                                </div>
-                                <span class="font-mono text-[12px] uppercase tracking-widest text-black/40 sm:text-right">{date}</span>
-                            </article>
-                        )}
-                    </div>
-                </div>
-            </section>
-
-            <!-- Capabilities / Skills Section -->
-            <section class="white-dot-grid border-t border-black/10 bg-black px-5 py-24 text-white sm:px-8 lg:px-12 lg:py-32" aria-label="Capabilities and skills">
-                <div class="mx-auto max-w-360">
-                    <div class="grid gap-12 lg:grid-cols-[.55fr_1fr]">
-                        <span class="font-mono text-[12px] uppercase tracking-[.16em] text-white/70">04 / Capabilities</span>
-                        <div>
-                            <h2 class="max-w-4xl text-4xl font-medium leading-[.98] tracking-[-.045em] sm:text-6xl">A practical stack, with an eye for the interface.</h2>
-                            <ul class="mt-12 flex flex-wrap gap-2 p-0 list-none" aria-label="Skills list">
-                                {skills.map(skill => 
-                                    <li>
-                                        <span class="inline-block rounded-full border border-white/15 px-4 py-2 font-mono text-[12px] uppercase tracking-widest text-white/70">
-                                            {skill}
-                                        </span>
-                                    </li>
-                                )}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="bg-grid border-t border-black/10 px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
-                <div class="mx-auto max-w-360">
-                    <span class="font-mono text-[12px] uppercase tracking-[.16em] text-black/45">05 / Contact</span>
-                    <div class="mt-10 flex flex-col justify-between gap-12 lg:flex-row lg:items-end">
-                        <h2 class="max-w-5xl text-5xl md:text-9xl font-semibold leading-[.78] tracking-[-.08em]">
-                            Let's make<br/>
-                            <span class="text-black/25">something.</span>
-                        </h2>
-                        <div class="max-w-sm lg:pb-2">
-                            <p class="text-lg leading-relaxed text-black/60">Have an idea, a product to build, or a problem worth solving?</p>
-                            <a 
-                              href="mailto:tsizehena223@gmail.com" 
-                              aria-label="Send an email to tsizehena223@gmail.com" 
-                              class="mt-6 inline-flex rounded-full bg-black px-6 py-4 font-mono text-[12px] uppercase tracking-[.14em] text-white transition hover:bg-black/80"
-                            >
-                                tsizehena223@gmail.com <span aria-hidden="true" class="ml-1">↗</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Hero client:load />
+            <Banner />
+            <Projects client:load />
+            <About client:load /> 
+            <Experiences client:load />
+            <Skills client:load />
+            <Contact client:load />
         </main>
-
-        <!-- Footer -->
-        <footer class="border-t border-black/10 px-5 py-6 sm:px-8 lg:px-12">
-            <div class="mx-auto items-center flex max-w-360 flex-col gap-4 font-mono text-[12px] uppercase tracking-[.12em] text-black/45 sm:flex-row sm:items-center sm:justify-between">
-                <span>© {new Date().getFullYear()} Tsizehena</span>
-                <a 
-                  href="#top" 
-                  aria-label="Scroll back to top of page" 
-                  class="text-black transition hover:text-black/50"
-                >
-                  To top <span aria-hidden="true">↑</span>
-                </a>
-            </div>
-        </footer>
+        <Footer />
     </div>
 </Layout>

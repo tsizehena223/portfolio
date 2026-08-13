@@ -8,7 +8,7 @@ const links = [
   ['Contact', '#contact']
 ];
 
-export default function Navbar() {
+export default function Header() {
     const [open, setOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
