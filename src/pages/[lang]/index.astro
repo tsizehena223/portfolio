@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+import Header from '../../components/layouts/Header';
+import Footer from '../../components/layouts/Footer';
+import Banner from '../../components/others/Banner';
+
+import Projects from '../../components/sections/Projects';
+import Hero from '../../components/sections/Hero';
+import About from '../../components/sections/About';
+import Experiences from '../../components/sections/Experiences';
+import Skills from '../../components/sections/Skills';
+import Contact from '../../components/sections/Contact';
+
+export function getStaticPaths() {
+    return [
+        { params: { lang: 'fr' } },
+        { params: { lang: 'en' } },
+    ];
+}
+
+const { lang } = Astro.params;
+---
+
+<Layout>
+    <div id="top" class="min-h-screen overflow-hidden">
+        <Header client:load lang={lang} />
+        <main>
+            <Hero client:load lang={lang} />
+            <Banner lang={lang} />
+            <Projects client:load lang={lang} />
+            <About client:load lang={lang} /> 
+            <Experiences client:load lang={lang} />
+            <Skills client:load lang={lang} />
+            <Contact client:load lang={lang} />
+        </main>
+        <Footer lang={lang} />
+    </div>
+</Layout>
