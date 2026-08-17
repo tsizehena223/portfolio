@@ -74,7 +74,7 @@ export default function Projects({ lang = 'en' }) {
                                 <div className="mt-16 border-t border-black/10 pt-5">
                                     <div className="flex items-end justify-between gap-6">
                                         <span className="max-w-xs font-mono text-[10px] uppercase leading-relaxed tracking-[.14em] text-black/40">{item.tech}</span>
-                                        <span className="grid size-12 shrink-0 place-items-center rounded-full bg-black text-acid transition-all duration-300 group-hover:bg-acid group-hover:text-black">
+                                        <span className="grid size-12 shrink-0 place-items-center rounded-full bg-black text-acid transition-all duration-300">
                                             <ArrowUpRight size={17} strokeWidth={1.5} />
                                         </span>
                                     </div>
