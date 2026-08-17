@@ -14,7 +14,7 @@ export default function Banner({ lang = 'en' }) {
                                 {keyword}
                             </span>
                             <span className="text-md md:text-lg text-white/50">
-                                *
+                                |
                             </span>
                         </React.Fragment>
                     ))}

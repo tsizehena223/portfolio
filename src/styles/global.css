@@ -5,15 +5,30 @@
   --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'DM Mono', ui-monospace, monospace;
   --color-ink: #111111;
-  --color-paper: #f2f0ea;
+  --color-paper: #ffffff;
   --color-acid: #d9ff3f;
   --color-muted: #76746f;
 }
 
-:root { color-scheme: light; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-sans); }
-::selection { background: #111; color: #d9ff3f; }
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #111;
+  color: #d9ff3f;
+}
 
 .bg-grid {
   background-image: linear-gradient(to right, rgba(17,17,17,.055) 1px, transparent 1px), linear-gradient(to bottom, rgba(17,17,17,.055) 1px, transparent 1px);

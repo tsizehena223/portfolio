@@ -17,7 +17,7 @@ export default function Hero({ lang = 'en' }) {
     const cta = ctaLabels[lang] || ctaLabels.en;
 
     return (
-        <section className="soft-grid relative flex items-center px-5 py-36 lg:py-40 sm:px-8 lg:px-12" aria-label="Hero section">
+        <section className="soft-grid relative flex items-center px-5 py-36 sm:px-8 sm:py-44 lg:px-12 lg:py-52 xl:py-64" aria-label="Hero section">
             <div className="md:mt-24 lg:mt-32 mx-auto w-full max-w-360">
                 <div className="mb-8 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[.16em] text-black/60 reveal">
                     <span className="inline-block size-2 rounded-full bg-green-500 ring-4 ring-black/5" aria-hidden="true"></span>
