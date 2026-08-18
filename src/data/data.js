@@ -29,6 +29,7 @@ export const HERO_DATA = {
         tagline: 'Développeur web spécialisé dans la conception d’applications performantes avec',
         techStack: 'Symfony & React',
         bio: 'Basé à Madagascar, je transforme des problématiques complexes en produits numériques rapides, fiables et intuitifs.',
+        role: 'Développeur Web Full-Stack'
     },
     en: {
         availability: 'Available for new projects',
@@ -37,6 +38,7 @@ export const HERO_DATA = {
         tagline: 'Web developer specializing in building high-performance applications with',
         techStack: 'Symfony & React',
         bio: 'Based in Madagascar, I turn complex requirements into fast, reliable, and intuitive digital products.',
+        role: 'Full-Stack Web Developer'
     },
 };
 

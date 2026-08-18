@@ -160,9 +160,6 @@ body {
 
 @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
 
-.marquee { animation: marquee 22s linear infinite; }
-@keyframes marquee { to { transform: translateX(-50%); } }
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

@@ -3,7 +3,6 @@ import Layout from '../../layouts/Layout.astro';
 
 import Header from '../../components/layouts/Header';
 import Footer from '../../components/layouts/Footer';
-import Banner from '../../components/others/Banner';
 
 import Projects from '../../components/sections/Projects';
 import Hero from '../../components/sections/Hero';
@@ -11,6 +10,7 @@ import About from '../../components/sections/About';
 import Experiences from '../../components/sections/Experiences';
 import Skills from '../../components/sections/Skills';
 import Contact from '../../components/sections/Contact';
+import Tools from '../../components/sections/Tools';
 
 export function getStaticPaths() {
     return [
@@ -27,7 +27,7 @@ const { lang } = Astro.params;
         <Header client:load lang={lang} />
         <main>
             <Hero client:load lang={lang} />
-            <Banner lang={lang} />
+            <Tools lang={lang} />
             <Projects client:load lang={lang} />
             <About client:load lang={lang} /> 
             <Experiences client:load lang={lang} />

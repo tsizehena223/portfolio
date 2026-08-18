@@ -1,5 +1,10 @@
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
 import { PROJECTS } from '../../data/data.js';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const uiLabels = {
     fr: {
@@ -20,10 +25,40 @@ export default function Projects({ lang = 'en' }) {
     const labels = uiLabels[lang] || uiLabels.en;
     const projectList = PROJECTS[lang] || PROJECTS.en || PROJECTS;
 
+    const containerRef = useRef(null);
+    const cardRefs = useRef([]);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            const cards = cardRefs.current.filter(Boolean);
+
+            cards.forEach((card, index) => {
+                // Apply a sticky stacking scale effect except for the last card
+                if (index < cards.length - 1) {
+                    gsap.to(card, {
+                        scale: 0.92,
+                        opacity: 0.4,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: card,
+                            start: 'top top+=100', // Start scaling when pinned near top
+                            end: 'bottom top+=100', // Finish scaling as next card slides over
+                            scrub: true,
+                        }
+                    });
+                }
+            });
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, [projectList]);
+
     return (
-        <section id="work" className="px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
+        <section id="work" ref={containerRef} className="relative w-full px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
             <div className="mx-auto max-w-360">
-                <div className="mb-14 grid gap-8 lg:grid-cols-[.55fr_1fr] lg:items-end">
+                
+                {/* Header */}
+                <div className="mb-16 grid gap-8 lg:grid-cols-[.55fr_1fr] lg:items-end">
                     <span className="font-mono text-[12px] uppercase tracking-[.16em] text-black/65">
                         {labels.section}
                     </span>
@@ -33,11 +68,17 @@ export default function Projects({ lang = 'en' }) {
                     </h2>
                 </div>
 
-                <div className="space-y-6">
-                    {projectList.map((item) => (
-                        <article key={item.no} className="group grid overflow-hidden rounded-4xl border border-black/10 bg-white/40 lg:grid-cols-[1.15fr_.85fr]">
+                {/* Vertical Sticky Stack Container */}
+                <div className="relative flex flex-col gap-12 lg:gap-16">
+                    {projectList.map((item, index) => (
+                        <article 
+                            key={item.no} 
+                            ref={(el) => (cardRefs.current[index] = el)}
+                            style={{ top: `calc(100px + ${index * 12}px)` }}
+                            className="sticky group grid w-full overflow-hidden rounded-4xl border border-black/10 bg-white shadow-2xl backdrop-blur-md lg:grid-cols-[1.15fr_.85fr] origin-top will-change-transform"
+                        >
                             <div className={`relative min-h-90 overflow-hidden ${item.tone} p-6 text-white transition-all duration-700 lg:min-h-135`}>
-                                {/* Subtle grain / dot texture */}
+                                {/* Grain / dot texture */}
                                 <div className="absolute inset-0 opacity-[0.12]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
 
                                 {/* Soft light */}
@@ -55,7 +96,7 @@ export default function Projects({ lang = 'en' }) {
                                     </div>
                                 </div>
 
-                                {/* Large project number */}
+                                {/* Project number */}
                                 <span className="pointer-events-none absolute -bottom-8 -right-2 font-mono text-[11rem] font-bold leading-none -tracking-widest text-white/[0.035] transition-transform duration-700 group-hover:-translate-y-3">
                                     {item.no}
                                 </span>
@@ -83,6 +124,7 @@ export default function Projects({ lang = 'en' }) {
                         </article>
                     ))}
                 </div>
+
             </div>
         </section>
     );
