@@ -8,11 +8,11 @@ gsap.registerPlugin(ScrollTrigger);
 const labels = {
     fr: {
         title: "ARCHITECTURE & TECH STACK",
-        section: "03 / EXPERTISE"
+        section: "01 / EXPERTISE"
     },
     en: {
         title: "ARCHITECTURE & TECH STACK",
-        section: "03 / EXPERTISE"
+        section: "01 / EXPERTISE"
     }
 };
 

@@ -8,14 +8,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 const uiLabels = {
     fr: {
-        section: "05 / Contact",
+        section: "06 / Contact",
         headingTitle: "Créons",
         headingSubtitle: "quelque chose ensemble.",
         body: "Vous avez une idée, un produit à construire ou un problème qui mérite d'être résolu ?",
         socialsTitle: "Réseaux & Contact"
     },
     en: {
-        section: "05 / Contact",
+        section: "06 / Contact",
         headingTitle: "Let's make",
         headingSubtitle: "something.",
         body: "Have an idea, a product to build, or a problem worth solving?",

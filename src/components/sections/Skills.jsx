@@ -7,11 +7,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const uiLabels = {
     fr: {
-        section: "04 / Compétences",
+        section: "05 / Compétences",
         heading: "Un stack technique pratique, avec une attention particulière aux interfaces."
     },
     en: {
-        section: "04 / Capabilities",
+        section: "05 / Capabilities",
         heading: "A practical stack, with an eye for the interface."
     }
 };

@@ -8,13 +8,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const uiLabels = {
     fr: {
-        section: "01 / Projets sélectionnés",
+        section: "02 / Projets sélectionnés",
         headingTitle: "Conçu pour le web,",
         headingSubtitle: "façonné par le contexte.",
         selectedWork: "Projet sélectionné"
     },
     en: {
-        section: "01 / Selected work",
+        section: "02 / Selected work",
         headingTitle: "Built for the web,",
         headingSubtitle: "shaped by context.",
         selectedWork: "Selected work"

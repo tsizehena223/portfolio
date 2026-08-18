@@ -7,12 +7,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const uiLabels = {
     fr: {
-        section: "03 / Expérience",
+        section: "04 / Expérience",
         headingTitle: "Une pratique",
         headingSubtitle: "en constante évolution."
     },
     en: {
-        section: "03 / Experience",
+        section: "04 / Experience",
         headingTitle: "A growing",
         headingSubtitle: "practice."
     }
