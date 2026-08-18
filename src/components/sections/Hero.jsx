@@ -208,7 +208,7 @@ export default function Hero({ lang = 'en' }) {
                         className="group relative inline-flex items-center overflow-hidden rounded-full border border-black/10 bg-black/5 px-4 py-1.5 font-semibold text-black/80 transition-all duration-200 ease-out hover:border-black hover:bg-black hover:text-white hover:shadow-lg cursor-pointer"
                     >
                         {/* Shimmer reflection highlight on hover */}
-                        <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
+                        <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
                         <span className="relative z-10">
                             {data.role || "Full-Stack Web Developer"}
                         </span>
